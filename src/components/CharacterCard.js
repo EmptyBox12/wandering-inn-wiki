@@ -16,7 +16,7 @@ export default function CharacterCard({ character }) {
         <img className="card-img" src={character.img} />
       </div>
 
-      <div className="card-desc">{character.description}</div>
+      <div className="card-desc">{character.shortDesc}</div>
     </div>
   );
 }

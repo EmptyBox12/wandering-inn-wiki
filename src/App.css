@@ -101,3 +101,36 @@
   height: 200px;
   border-radius: 5px;
 }
+.detail-page{
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+.detail-left{
+  border: 2px solid black;
+  min-height:100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.img-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px
+}
+.detail-name{
+  font-size: 23px;
+  border-bottom: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  font-weight: 500;
+}
+.detail-img{
+  height: 250px;
+}
+.detail-right{
+  flex: 3;
+}
