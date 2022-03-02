@@ -170,6 +170,10 @@
   font-weight: 500;
   margin-top: 30px;
   margin-bottom: 5px;
+  padding-bottom: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .sub-title{
   margin: 10px 0px 10px 0px;
@@ -289,4 +293,20 @@
   color: white;
   font-size: 17px;
   font-family:Arial, Helvetica, sans-serif;
+}
+.edit-button{
+  width: 95px;
+  margin-right: 15px;
+  height: 28px;
+  font-size: 17px;
+  border-radius: 10px;
+  background-color: #101010;
+  color: white;
+  border: none;
+}
+.edit-button:hover{
+  border: 1px solid rgb(119, 118, 118);
+}
+.edit-button:active{
+  border: 1px solid rgb(199, 198, 198);
 }

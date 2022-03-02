@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar({loggedIn}) {
+export default function Navbar({ loggedIn, user }) {
   const navigate = useNavigate();
   return (
     <div className="navbar">
@@ -24,7 +24,7 @@ export default function Navbar({loggedIn}) {
         </div>
         {loggedIn === true ? (
           <>
-            <div className="nav-item">Username</div>
+            <div className="nav-item">{user.username}</div>
             <div className="nav-item">Log Out</div>
           </>
         ) : (
@@ -37,7 +37,14 @@ export default function Navbar({loggedIn}) {
             >
               Login
             </div>
-            <div className="nav-item">Sign In</div>
+            <div
+              className="nav-item"
+              onClick={() => {
+                navigate("/signin");
+              }}
+            >
+              Sign In
+            </div>
           </>
         )}
       </div>

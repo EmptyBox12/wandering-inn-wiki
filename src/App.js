@@ -6,6 +6,7 @@ import CharacterPage from "./components/CharacterPage";
 import Navbar from "./components/Navbar";
 import Characters from "./components/Characters";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -79,7 +80,7 @@ function App() {
   ]);
   return (
     <div className="App">
-      <Navbar loggedIn={loggedIn} />
+      <Navbar loggedIn={loggedIn} user={user} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home characters={characters} />} />
@@ -96,6 +97,10 @@ function App() {
           <Route
             path="/characters"
             element={<Characters characters={characters} />}
+          />
+            <Route
+            path="/signin"
+            element={<Register loggedIn = {loggedIn} users = {users} setUsers = {setUsers}  />}
           />
           <Route
             path="/login"
