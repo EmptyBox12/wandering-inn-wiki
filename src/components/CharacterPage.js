@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 
-export default function CharacterPage({ characters }) {
+export default function CharacterPage({ characters, user, loggedIn }) {
   const { slug } = useParams();
   const [character, setCharacter] = useState({});
   const comments = [
@@ -76,7 +76,7 @@ export default function CharacterPage({ characters }) {
           <div className="section-title">Comments</div>
           <div className="comment-area-container">
             <textarea className="comment-area" cols="30" rows="7"></textarea>
-            <button>Comment</button>
+            <button disabled = {loggedIn ? false : true} style = {loggedIn ? {} : {"filter" :"brightness(0.1)"}} >Comment</button>
           </div>
           {comments.map((comment) => {
             return <Comment comment={comment} />;

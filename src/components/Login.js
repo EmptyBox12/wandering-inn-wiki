@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-export default function Login() {
+export default function Login({ users, setUser, loggedIn, setLoggedIn }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate("/");
+    }
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       username: "",
       password: "",
     },
     onSubmit: (values) => {
-      console.log(values);
+      if (users.find((element) => element.username === values.username)) {
+        let loginUser = users.find(
+          (element) => element.username === values.username
+        );
+        if (loginUser.password === values.password) {
+          setUser(loginUser);
+          setLoggedIn(true);
+          navigate("/");
+        } else {
+          alert("Password doesn't match")
+        }
+      } else {
+        alert("User not found")
+      }
     },
     validationSchema: Yup.object().shape({
       username: Yup.string().required("Username is required!"),

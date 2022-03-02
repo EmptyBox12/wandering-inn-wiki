@@ -3,13 +3,14 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import CharacterPage from "./components/CharacterPage";
-import AdminPage from "./components/AdminPage";
 import Navbar from "./components/Navbar";
 import Characters from "./components/Characters";
 import Login from "./components/Login";
 
 function App() {
-  const loggedIn = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState();
   const [characters, setCharacters] = useState([
     {
       name: "Erin Solstice",
@@ -78,20 +79,35 @@ function App() {
   ]);
   return (
     <div className="App">
-      <Navbar loggedIn={loggedIn}/>
+      <Navbar loggedIn={loggedIn} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home characters={characters} />} />
           <Route
             path="/characters/:slug"
-            element={<CharacterPage characters={characters} />}
+            element={
+              <CharacterPage
+                characters={characters}
+                user={user}
+                loggedIn={loggedIn}
+              />
+            }
           />
-          <Route path="/admin" element={<AdminPage />} />
           <Route
             path="/characters"
             element={<Characters characters={characters} />}
           />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/login"
+            element={
+              <Login
+                users={users}
+                setUser={setUser}
+                loggedIn={loggedIn}
+                setLoggedIn={setLoggedIn}
+              />
+            }
+          />
         </Routes>
       </div>
     </div>
