@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({loggedIn}) {
   const navigate = useNavigate();
-  const loggedIn = useState(false);
   return (
     <div className="navbar">
       <div
@@ -12,7 +11,7 @@ export default function Navbar() {
           navigate("/");
         }}
       >
-       The Wandering Inn
+        The Wandering Inn
       </div>
       <div className="navbar-right">
         <div
@@ -30,7 +29,14 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <div className="nav-item">Login</div>
+            <div
+              className="nav-item"
+              onClick={() => {
+                navigate("/login");
+              }}
+            >
+              Login
+            </div>
             <div className="nav-item">Sign In</div>
           </>
         )}

@@ -1,16 +1,22 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import CharacterPage from "./components/CharacterPage";
 import AdminPage from "./components/AdminPage";
 import Navbar from "./components/Navbar";
 import Characters from "./components/Characters";
+import Login from "./components/Login";
 
 function App() {
-  const characters = [
+  const loggedIn = useState(false);
+  const [characters, setCharacters] = useState([
     {
       name: "Erin Solstice",
+      class: "Innkeper",
+      trueClass: "Magical Innkeeper",
+      quote:
+        "One soup to rule them all. One soup to bring them together. And in the darkness blind them.",
       slug: "erin-solstice",
       img: "/images/erin.jpg",
       shortDesc:
@@ -20,6 +26,10 @@ function App() {
     },
     {
       name: "Pisces Jealnet",
+      class: "Necromancer",
+      trueClass: "Deathbane Necromancer",
+      quote:
+        "The Goblins have secrets, Miss Selys. I wished to know some of them. Secrets are important. Valuable. They are the dark lifeblood of this world. They run thicker than blood and are worth far more than gold.",
       slug: "pices-jealnet",
       img: "/images/pisces.png",
       shortDesc:
@@ -29,6 +39,10 @@ function App() {
     },
     {
       name: "Ceria Springwalker",
+      class: "Cryomancer",
+      trueClass: "Arctic Cryomancer",
+      quote:
+        "You are all cowards. Fearful, small people, living in the shadow of the Golems. You won’t ever find true magic, not here. Not while Cognita and the Golems are the true rulers of this place. I’m leaving—I won’t stay here, hiding from the truth. So long as the Golems live, there are no true mages in Wistram. None, except for the dead.",
       slug: "ceria-springwalker",
       img: "/images/ceria.png",
       shortDesc:
@@ -38,6 +52,9 @@ function App() {
     },
     {
       name: "Pawn",
+      class: "Priest",
+      trueClass: "Priest of Wrath and Sky",
+      quote: "What do you tell a soldier under your command when he is dying?",
       slug: "pawn",
       img: "/images/pawn.png",
       shortDesc:
@@ -47,6 +64,10 @@ function App() {
     },
     {
       name: "Flos Reimarch",
+      class: "King",
+      trueClass: "Unknown",
+      quote:
+        "Let this nation wake from its decade-long slumber! Let every hand grab sword and axe! Stand, all those who still remember my name! Hear me and obey! Rise!",
       slug: "flos-reimarch",
       img: "/images/flos.jpg",
       shortDesc:
@@ -54,10 +75,10 @@ function App() {
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
     },
-  ];
+  ]);
   return (
     <div className="App">
-      <Navbar />
+      <Navbar loggedIn={loggedIn}/>
       <div className="content">
         <Routes>
           <Route path="/" element={<Home characters={characters} />} />
@@ -70,6 +91,7 @@ function App() {
             path="/characters"
             element={<Characters characters={characters} />}
           />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>
