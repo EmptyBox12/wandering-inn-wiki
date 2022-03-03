@@ -21,6 +21,10 @@ function App() {
         "One soup to rule them all. One soup to bring them together. And in the darkness blind them.",
       slug: "erin-solstice",
       img: "/images/erin.jpg",
+      appearance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      personality: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      classes: ["Inkeeper 100lv", "Necromancer 20lvl"],
+      skills: ["Minatour Punch", "Raise Dead", "Magical Food"],
       shortDesc:
         "Erin Solstice is the main protagonist of The Wandering Inn. She is a [Magical Innkeeper] and a master-class chess player. She first wandered into this world on her way to the bathroom and has been stuck ever since.",
       description:
@@ -34,6 +38,10 @@ function App() {
         "The Goblins have secrets, Miss Selys. I wished to know some of them. Secrets are important. Valuable. They are the dark lifeblood of this world. They run thicker than blood and are worth far more than gold.",
       slug: "pices-jealnet",
       img: "/images/pisces.png",
+      appearance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      personality: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      classes: ["Inkeeper 100lv", "Necromancer 20lvl"],
+      skills: ["Minatour Punch", "Raise Dead", "Magical Food"],
       shortDesc:
         "Pisces Jealnet is a [Necromancer], and regular customer of The Wandering Inn. He is a Gold-ranked adventurer and member of the Horns of Hammerad.",
       description:
@@ -47,6 +55,10 @@ function App() {
         "You are all cowards. Fearful, small people, living in the shadow of the Golems. You won’t ever find true magic, not here. Not while Cognita and the Golems are the true rulers of this place. I’m leaving—I won’t stay here, hiding from the truth. So long as the Golems live, there are no true mages in Wistram. None, except for the dead.",
       slug: "ceria-springwalker",
       img: "/images/ceria.png",
+      appearance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      personality: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      classes: ["Inkeeper 100lv", "Necromancer 20lvl"],
+      skills: ["Minatour Punch", "Raise Dead", "Magical Food"],
       shortDesc:
         "Ceria Springwalker is a half-Elf [Arctic Cryomancer] and captain of the Horns of Hammerad.",
       description:
@@ -59,6 +71,10 @@ function App() {
       quote: "What do you tell a soldier under your command when he is dying?",
       slug: "pawn",
       img: "/images/pawn.png",
+      appearance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      personality: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      classes: ["Inkeeper 100lv", "Necromancer 20lvl"],
+      skills: ["Minatour Punch", "Raise Dead", "Magical Food"],
       shortDesc:
         "Pawn is an Individual Worker Antinium that belongs to Liscor's Antinium Hive. He is the first Antinium to become a named individual in the Innverse. Chapters primarily featuring Pawn are often labeled with an L.",
       description:
@@ -72,6 +88,10 @@ function App() {
         "Let this nation wake from its decade-long slumber! Let every hand grab sword and axe! Stand, all those who still remember my name! Hear me and obey! Rise!",
       slug: "flos-reimarch",
       img: "/images/flos.jpg",
+      appearance: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      personality: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lectus neque, tincidunt in turpis ac, fringilla aliquet arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque id sapien et ipsum tempor sollicitudin in non eros. Aenean semper feugiat ante, vel dapibus massa tempor eget. Donec viverra ut mi vitae tempus. Nulla in tempus magna. Aliquam molestie vel nisl sed dapibus. Sed eu elit nunc. Sed eget sodales dui. Aliquam blandit lorem at sapien lacinia, ac auctor nisi pulvin",
+      classes: ["Inkeeper 100lv", "Necromancer 20lvl"],
+      skills: ["Minatour Punch", "Raise Dead", "Magical Food"],
       shortDesc:
         "Flos Reimarch, also known as Flos, the King of Destruction, is a [King] whose Kingdom, Reim, is located in central Chandrar, beside the Great Desert. He is infamous worldwide, having managed to conquer almost half of the civilized world twenty years ago. The current era of history, A.F., is named for him.",
       description:
@@ -91,6 +111,7 @@ function App() {
                 characters={characters}
                 user={user}
                 loggedIn={loggedIn}
+                setCharacters = {setCharacters}
               />
             }
           />

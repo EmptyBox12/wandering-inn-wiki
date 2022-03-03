@@ -2,9 +2,17 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
 
-export default function CharacterPage({ characters, user, loggedIn }) {
+export default function CharacterPage({
+  characters,
+  user,
+  loggedIn,
+  setCharacters,
+}) {
   const { slug } = useParams();
   const [character, setCharacter] = useState({});
+  const [editIntroduction, setEditIntroduction] = useState(false);
+  const [editAppearance, setEditAppearance] = useState(false);
+  const [editPersonality, setEditPersonality] = useState(false);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
@@ -36,6 +44,13 @@ export default function CharacterPage({ characters, user, loggedIn }) {
     setComments(newComments);
     setComment("");
   }
+  function handleEdit(e, editName) {
+    let index = characters.findIndex((item) => item.slug === slug);
+    let newCharacters = [...characters]
+    newCharacters[index][editName] = e.target.value 
+    setCharacters(newCharacters);
+    setCharacter(newCharacters[index]);
+  }
 
   return (
     <div className="detail-page">
@@ -63,44 +78,140 @@ export default function CharacterPage({ characters, user, loggedIn }) {
         <div className="right-section">
           <div className="section-title" style={{ marginTop: "15px" }}>
             <div>Introduction</div>
-            <button
-              className="edit-button"
-              style={loggedIn ? { display: "block" } : { display: "none" }}
-            >
-              Edit
-            </button>
+            {editIntroduction ? (
+              <button
+                onClick={() => {
+                  setEditIntroduction(false);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Save
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setEditIntroduction(true);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Edit
+              </button>
+            )}
           </div>
-          <div>{character.description}</div>
+          {editIntroduction ? (
+            <textarea
+              className="comment-area"
+              cols="30"
+              rows="10"
+              onChange={(e) => {
+                handleEdit(e, "description");
+              }}
+              value={character.description}
+            ></textarea>
+          ) : (
+            <div>{character.description}</div>
+          )}
         </div>
         <div className="right-section">
           <div className="section-title">
-            <div>Appearance</div>{" "}
-            <button
-              className="edit-button"
-              style={loggedIn ? { display: "block" } : { display: "none" }}
-            >
-              Edit
-            </button>
+            <div>Appearance</div>
+            {editAppearance ? (
+              <button
+                onClick={() => {
+                  setEditAppearance(false);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Save
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setEditAppearance(true);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Edit
+              </button>
+            )}
           </div>
-          <div>{character.description}</div>
+          {editAppearance ? (
+            <textarea
+              className="comment-area"
+              cols="30"
+              rows="10"
+              onChange={(e) => {
+                handleEdit(e, "appearance");
+              }}
+              value={character.appearance}
+            ></textarea>
+          ) : (
+            <div>{character.appearance}</div>
+          )}
         </div>
         <div className="right-section">
           <div className="section-title">
-            <div>Personality</div>{" "}
-            <button
-              className="edit-button"
-              style={loggedIn ? { display: "block" } : { display: "none" }}
-            >
-              Edit
-            </button>
+            <div>Personality</div>
+            {editPersonality ? (
+              <button
+                onClick={() => {
+                  setEditPersonality(false);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Save
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setEditPersonality(true);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Edit
+              </button>
+            )}
           </div>
-          <div>{character.description}</div>
+          {editPersonality ? (
+            <textarea
+              className="comment-area"
+              cols="30"
+              rows="10"
+              onChange={(e) => {
+                handleEdit(e, "personality");
+              }}
+              value={character.personality}
+            ></textarea>
+          ) : (
+            <div>{character.personality}</div>
+          )}
         </div>
         <div className="right-section">
-          <div className="section-title">Powers and Abilities Personality</div>
-          <div className="sub-title">Classes/Levels:</div>
-          <div className="sub-title">Skills:</div>
-          <div>{character.description}</div>
+          <div className="section-title">Powers and Abilities</div>
+          <div className="sub-title">
+            <div>Classes/Levels:</div>
+            <ul>
+              {character.classes &&
+                character.classes.map((item) => {
+                  return <li>{item}</li>;
+                })}
+            </ul>
+          </div>
+          <div className="sub-title">
+            <div>Skills:</div>
+            <ul>
+              {character.skills &&
+                character.skills.map((item) => {
+                  return <li>{item}</li>;
+                })}
+            </ul>
+          </div>
         </div>
         <div className="comments-container">
           <div className="section-title">Comments</div>
