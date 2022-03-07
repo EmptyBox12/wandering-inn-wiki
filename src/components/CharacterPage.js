@@ -64,10 +64,10 @@ export default function CharacterPage({
           <div>True Class</div> <div>{character.trueClass}</div>
         </div>
         <div className="detail-info">
-          <div>Level</div> <div>60-70</div>
+          <div>Level</div> <div>{character.level}</div>
         </div>
         <div className="detail-info">
-          <div>Gender</div> <div>Male</div>
+          <div>Gender</div> <div>{character.gender}</div>
         </div>
         <div className="detail-quote">
           <div className="quote-title">Quote</div>

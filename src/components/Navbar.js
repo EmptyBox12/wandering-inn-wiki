@@ -24,6 +24,14 @@ export default function Navbar({ loggedIn, user }) {
         </div>
         {loggedIn === true ? (
           <>
+            <div
+              className="nav-item"
+              onClick={() => {
+                navigate("/characters/new");
+              }}
+            >
+              Create Character
+            </div>
             <div className="nav-item">{user.username}</div>
             <div className="nav-item">Log Out</div>
           </>

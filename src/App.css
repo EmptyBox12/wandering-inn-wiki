@@ -310,3 +310,50 @@
 .edit-button:active{
   border: 1px solid rgb(199, 198, 198);
 }
+.new-character-form{
+  display: flex;
+  flex-direction: column;
+  align-items:stretch;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.new-character-form input{
+  width: 50%;
+  height: 23px;
+  border-radius: 5px;
+  font-size: 17px;
+  background-color: #3e3e3e;
+  color: white;
+  border: 1px solid #787878;
+}
+.new-character-item{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.small-message{
+  filter: brightness(0.8);
+  font-size: 16px;
+  font-weight: normal;
+}
+.error{
+  color: tomato;
+  font-size: 16px;
+}
+.new-character-form button{
+  width: 95px;
+  height: 33px;
+  font-size: 17px;
+  border-radius: 10px;
+  background-color: #101010;
+  color: white;
+  border: none;
+  align-self: flex-end;
+}
+.new-character-form button:hover{
+  border: 1px solid rgb(119, 118, 118);
+}
+.new-character-form button:active{
+  border: 1px solid rgb(199, 198, 198);
+}
