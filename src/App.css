@@ -180,6 +180,42 @@
   font-size: 18px;
   font-weight: 500;
 }
+.sub-title input{
+  width: 50%;
+  height: 23px;
+  border-radius: 5px;
+  font-size: 17px;
+  background-color: #3e3e3e;
+  color: white;
+  border: 1px solid #787878;
+  outline: none;
+} 
+.sub-title button{
+  width: 95px;
+  height: 31px;
+  font-size: 17px;
+  border-radius: 5px;
+  background-color: #101010;
+  color: white;
+  border: none;
+}
+.sub-title button:hover{
+  border: 1px solid rgb(119, 118, 118);
+}
+.sub-title button:active{
+  border: 1px solid rgb(199, 198, 198);
+}
+.list-item{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: circle;
+}
+.delete{
+  color: tomato !important;
+  width: 50px !important;
+  height: 20px !important;
+  font-size: 13px !important;
+}
 .characters-page{
   display: flex;
   flex-direction: column;

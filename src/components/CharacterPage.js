@@ -13,6 +13,9 @@ export default function CharacterPage({
   const [editIntroduction, setEditIntroduction] = useState(false);
   const [editAppearance, setEditAppearance] = useState(false);
   const [editPersonality, setEditPersonality] = useState(false);
+  const [editPowers, setEditPowers] = useState(false);
+  const [newClass, setNewClass] = useState("");
+  const [newSkill, setNewSKill] = useState("");
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
@@ -46,10 +49,33 @@ export default function CharacterPage({
   }
   function handleEdit(e, editName) {
     let index = characters.findIndex((item) => item.slug === slug);
-    let newCharacters = [...characters]
-    newCharacters[index][editName] = e.target.value 
+    let newCharacters = [...characters];
+    newCharacters[index][editName] = e.target.value;
     setCharacters(newCharacters);
     setCharacter(newCharacters[index]);
+  }
+  function addNew(target, value) {
+    if (value != "" && value != " ") {
+      let index = characters.findIndex((item) => item.slug === slug);
+      let newCharacters = [...characters];
+      newCharacters[index][target].push(value);
+      if (target === "skills") {
+        setNewSKill("");
+      } else if (target === "classes") {
+        setNewClass("");
+      }
+      setCharacters(newCharacters);
+      setCharacter(newCharacters[index]);
+    } else {
+      alert("Value can't be empty");
+    }
+  }
+  function deleteItem(target, index) {
+    let characterIndex = characters.findIndex((item) => item.slug === slug);
+    let newCharacters = [...characters];
+    newCharacters[characterIndex][target].splice(index, 1);
+    setCharacters(newCharacters);
+    setCharacter(newCharacters[characterIndex]);
   }
 
   return (
@@ -193,22 +219,117 @@ export default function CharacterPage({
           )}
         </div>
         <div className="right-section">
-          <div className="section-title">Powers and Abilities</div>
+          <div className="section-title">
+            <div>Powers and Abilities</div>
+            {editPowers ? (
+              <button
+                onClick={() => {
+                  setEditPowers(false);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Save
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setEditPowers(true);
+                }}
+                className="edit-button"
+                style={loggedIn ? { display: "block" } : { display: "none" }}
+              >
+                Edit
+              </button>
+            )}
+          </div>
           <div className="sub-title">
-            <div>Classes/Levels:</div>
+            <div>
+              <div>Classes/Levels:</div>
+              {editPowers ? (
+                <>
+                  <input
+                    type="text"
+                    value={newClass}
+                    onChange={(e) => {
+                      setNewClass(e.target.value);
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      addNew("classes", newClass);
+                    }}
+                  >
+                    Add
+                  </button>
+                </>
+              ) : null}
+            </div>
             <ul>
               {character.classes &&
-                character.classes.map((item) => {
-                  return <li>{item}</li>;
+                character.classes.map((item, index) => {
+                  return (
+                    <li>
+                      <div className="list-item">
+                        <div>{item}</div>
+                        {editPowers && (
+                          <button
+                            onClick={() => {
+                              deleteItem("classes", index);
+                            }}
+                            className="delete"
+                          >
+                            X
+                          </button>
+                        )}
+                      </div>
+                    </li>
+                  );
                 })}
             </ul>
           </div>
           <div className="sub-title">
-            <div>Skills:</div>
+            <div>
+              <div>Skills:</div>
+              {editPowers ? (
+                <>
+                  <input
+                    type="text"
+                    value={newSkill}
+                    onChange={(e) => {
+                      setNewSKill(e.target.value);
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      addNew("skills", newSkill);
+                    }}
+                  >
+                    Add
+                  </button>
+                </>
+              ) : null}
+            </div>
             <ul>
               {character.skills &&
-                character.skills.map((item) => {
-                  return <li>{item}</li>;
+                character.skills.map((item, index) => {
+                  return (
+                    <li>
+                      <div className="list-item">
+                        <div>{item}</div>
+                        {editPowers && (
+                          <button
+                            onClick={() => {
+                              deleteItem("skills", index);
+                            }}
+                            className="delete"
+                          >
+                            X
+                          </button>
+                        )}
+                      </div>
+                    </li>
+                  );
                 })}
             </ul>
           </div>
