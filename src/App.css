@@ -86,6 +86,7 @@
   padding: 10px;
   border-radius: 10px;
   gap:7px;
+  min-height: 390px;
 }
 .card-main:hover{
   border: 2px solid #101010;

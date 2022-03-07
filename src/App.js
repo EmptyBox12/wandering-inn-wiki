@@ -277,6 +277,28 @@ function App() {
       description:
         "Belavierr, the Stitch Witch, is a powerful witch and Wiskeria's foster mother.",
     },
+    {
+      name: "Geneva Scala",
+      class: "Doctor",
+      mainCharacter: true,
+      trueClass: "Doctor",
+      gender: "female",
+      level: "34",
+      quote:
+        "I solemnly pledge to consecrate my life to the service of humanity. I will practice my profession with conscience and dignity; the health of my patient will be my first consideration; I will respect the secrets that are confided in me. I will not use my medical knowledge to violate human rights and civil liberties, even under threat…",
+      slug: "geneva-scala",
+      img: "/images/geneva.png",
+      appearance:
+        "She has brown hair and pale, olive skin. Her right arm is practically white.[2]",
+      personality:
+        "Geneva is best described as intense. Anything she does she will commit 200% effort. Geneva isn't afraid or disgusted by blood. She heals, to the best of her abilities and equipment, anyone and everyone who comes to her looking for medical assistance, even if it's an enemy. However, she often overworks herself to the point that her body would have collapsed if it wasn't inhabited by a Selphid. She can also be singleminded, unable to focus on anything else or consider other potential options.",
+      classes: ["Doctor", "Telepath"],
+      skills: ["Detect Injury", "Sterile Field", "Hygienic Hands", "Hemostatic Pause"],
+      shortDesc:
+        "Geneva Scala is a medical student from Earth who was transported to Baleros, becoming a [Doctor] known as the Last Light of Baleros.",
+      description:
+        "Geneva Scala is a medical student from Earth who was transported to Baleros, becoming a [Doctor] known as the Last Light of Baleros.",
+    },
   ]);
   return (
     <div className="App">

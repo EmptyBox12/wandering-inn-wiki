@@ -19,21 +19,21 @@ export default function CharacterPage({
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([
     {
-      author: "Ataberk",
+      author: "emptybox12",
       content: "Wow I love this character",
     },
     {
-      author: "İlkay",
-      content: "Wow I love this character",
+      author: "doctor",
+      content: "A unique character",
     },
     {
-      author: "Anıl",
-      content: "Wow I love this character",
+      author: "catinapizza",
+      content: "My favorite character",
     },
     {
-      author: "Eren",
+      author: "lostsoul",
       content:
-        "Actually this character is mispresented by the author. So that's why I don't like this character",
+        "I can't wait for the new episodes",
     },
   ]);
 
