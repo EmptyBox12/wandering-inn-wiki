@@ -17,6 +17,7 @@ function App() {
     {
       name: "Erin Solstice",
       class: "Innkeper",
+      mainCharacter: true,
       trueClass: "Magical Innkeeper",
       gender: "male",
       level: "72",
@@ -38,6 +39,7 @@ function App() {
     {
       name: "Pisces Jealnet",
       class: "Necromancer",
+      mainCharacter: true,
       trueClass: "Deathbane Necromancer",
       gender: "male",
       level: "72",
@@ -59,6 +61,7 @@ function App() {
     {
       name: "Ceria Springwalker",
       class: "Cryomancer",
+      mainCharacter: true,
       trueClass: "Arctic Cryomancer",
       gender: "male",
       level: "72",
@@ -80,6 +83,7 @@ function App() {
     {
       name: "Pawn",
       class: "Priest",
+      mainCharacter: true,
       trueClass: "Priest of Wrath and Sky",
       gender: "male",
       level: "72",
@@ -100,6 +104,7 @@ function App() {
     {
       name: "Flos Reimarch",
       class: "King",
+      mainCharacter: false,
       trueClass: "Unknown",
       gender: "male",
       level: "72",
@@ -124,7 +129,7 @@ function App() {
       <Navbar loggedIn={loggedIn} user={user} setUser = {setUser} setLoggedIn = {setLoggedIn} />
       <div className="content">
         <Routes>
-          <Route path="/" element={<Home characters={characters} />} />
+          <Route path="/" element={<Home characters={characters.filter(character => character.mainCharacter === true)} />} />
           <Route
             path="/characters/:slug"
             element={

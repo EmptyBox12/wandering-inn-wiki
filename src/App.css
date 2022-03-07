@@ -368,6 +368,17 @@
   flex-direction: column;
   gap: 3px;
 }
+.radio{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.radio input{
+  width: fit-content;
+}
+.radio label{
+  margin-right: 20px;
+}
 .small-message{
   filter: brightness(0.8);
   font-size: 16px;

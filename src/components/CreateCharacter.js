@@ -20,6 +20,7 @@ export default function CreateCharacter({
     initialValues: {
       name: "",
       class: "",
+      mainCharacter: "true",
       trueClass: "",
       gender: "",
       level: undefined,
@@ -34,10 +35,10 @@ export default function CreateCharacter({
       description: "",
     },
     onSubmit: (values) => {
-      console.log(values);
       let imgURL = URL.createObjectURL(values.img[0]);
       let classes = values.classes.split(", ");
       let skills = values.skills.split(", ");
+      let mainCharacter = values.mainCharacter === "true" ? true : false;
       let newCharacter = {
         name: values.name,
         class: values.class,
@@ -52,22 +53,25 @@ export default function CreateCharacter({
         classes,
         skills,
         shortDesc: values.shortDesc,
-        description: values.description
-      }
-      if(characters.find((element) => element.name === newCharacter.name)){
+        description: values.description,
+        mainCharacter,
+      };
+      if (characters.find((element) => element.name === newCharacter.name)) {
         alert("Character already exists");
-      } else{
+      } else {
         setCharacters([...characters, newCharacter]);
-        console.log(newCharacter, characters);
         navigate(`/characters/${newCharacter.slug}`);
       }
     },
     validationSchema: Yup.object().shape({
       name: Yup.string().required("Field can't be empty!"),
       class: Yup.string().required("Field can't be empty!"),
+      mainCharacter: Yup.string().required("Field can't be empty!"),
       trueClass: Yup.string().required("Field can't be empty!"),
       gender: Yup.string().required("Field can't be empty!"),
-      level: Yup.number("Level has to be a number").required("Field can't be empty!"),
+      level: Yup.number()
+        .required("Field can't be empty!")
+        .typeError("Level has to be a number"),
       quote: Yup.string().required("Field can't be empty!"),
       slug: Yup.string().required("Field can't be empty!"),
       appearance: Yup.string().required("Field can't be empty!"),
@@ -120,6 +124,24 @@ export default function CreateCharacter({
           {formik.touched.trueClass && formik.errors.trueClass ? (
             <div className="error">{formik.errors.trueClass}</div>
           ) : null}
+        </div>
+        <div className="radio">
+          <input
+            type="radio"
+            name="mainCharacter"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value="true"
+          />
+          <label htmlFor="mainCharacter">Main Character</label>
+          <input
+            type="radio"
+            name="mainCharacter"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value="false"
+          />
+          <label htmlFor="mainCharacter">Side Character</label>
         </div>
         <div className="new-character-item">
           <label htmlFor="gender">Character Gender:</label>
