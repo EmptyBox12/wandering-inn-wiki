@@ -109,7 +109,8 @@
 .detail-left{
   border: 3px solid black;
   border-radius: 3px;
-  height:100vh;
+  min-height: 100vh;
+  height: fit-content;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -143,6 +144,7 @@
   height: 40px;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 .detail-right{
   flex: 3;
@@ -156,13 +158,13 @@
 .quote-title{
   padding-left: 20px;
   padding-top: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 16px;
   border-top: 2px solid black;
   font-weight: 500;
 }
 .quote{
-  padding: 9px 20px 10px 20px;
+  padding: 9px 20px 20px 20px;
 }
 .section-title{
   font-size: 23px;
