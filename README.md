@@ -1,3 +1,3 @@
 A simple wiki project based on the series The Wandering Inn.
 
-Work in progress...
+Live preview: https://wandering-inn-wiki.netlify.app/
