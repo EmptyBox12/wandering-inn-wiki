@@ -121,7 +121,7 @@ function App() {
   ]);
   return (
     <div className="App">
-      <Navbar loggedIn={loggedIn} user={user} />
+      <Navbar loggedIn={loggedIn} user={user} setUser = {setUser} setLoggedIn = {setLoggedIn} />
       <div className="content">
         <Routes>
           <Route path="/" element={<Home characters={characters} />} />

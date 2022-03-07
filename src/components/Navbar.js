@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Navbar({ loggedIn, user }) {
+export default function Navbar({ loggedIn, user, setUser, setLoggedIn }) {
   const navigate = useNavigate();
   return (
     <div className="navbar">
@@ -33,7 +33,15 @@ export default function Navbar({ loggedIn, user }) {
               Create Character
             </div>
             <div className="nav-item">{user.username}</div>
-            <div className="nav-item">Log Out</div>
+            <div
+              className="nav-item"
+              onClick={() => {
+                setUser();
+                setLoggedIn(false);
+              }}
+            >
+              Log Out
+            </div>
           </>
         ) : (
           <>
